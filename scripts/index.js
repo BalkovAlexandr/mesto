@@ -1,11 +1,11 @@
-const popup = document.querySelector('.popup');
-const editButton = document.querySelector('.profile__edit-button');
-const popupCloseButton = document.querySelector('.popup__close-button');
-const profileName = document.querySelector('.profile__name');
-const profileAchievements = document.querySelector('.profile__achievements');
-const popupForm = document.querySelector('.popup__form');
-const popupInputName = document.querySelector('.popup__input-name');
-const popupInputAchievements = document.querySelector('.popup__input-achievements');
+let popup = document.querySelector('.popup');
+let editButton = document.querySelector('.profile__edit-button');
+let popupCloseButton = document.querySelector('.popup__close-button');
+let profileName = document.querySelector('.profile__name');
+let profileAchievements = document.querySelector('.profile__achievements');
+let popupForm = document.querySelector('.popup__form');
+let popupInputName = document.querySelector('.popup__input-name');
+let popupInputAchievements = document.querySelector('.popup__input-achievements');
 
 function showPopup() {
     popup.classList.add('popup_opened');
