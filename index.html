@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Поделитесь вашим любимым местом России, добавляйте фотографии, ставьте лайки. ">
+        <meta name="keywords" content="место, красивые места россии">
+        <meta name="author" content="Александр Балков">
+        <link rel="stylesheet" href="./pages/index.css">
+        <title>Mesto</title>
+</head>
+<body>
+    <div class="root">
+        <header class="header root__center">
+            <img class="header__logo" src="images/header-logo.svg" alt="логотип">
+        </header>
+
+        <main class="main">
+            <section class="profile root__center">
+                <div class="profile__element">
+                    <img class="profile__avatar" src="images/profile-avatar.jpg" alt="аватар">
+                    <div class="profile__info">
+                        <div class="profile__edit">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button class="profile__edit-button links-transparency" type="button"></button>
+                        </div>
+                        <p class="profile__achievements">Исследователь океана</p>
+                    </div>
+                </div>
+                <button class="profile__add-button links-transparency" type="button"></button>
+            </section>
+
+            <section class="elements root__center">
+                <ul class="photo-grid">
+                    <li class="photo-grid__item">
+                        <img class="photo-grid__image" src="./images/photo-altai.jpg" alt="алтай">
+                        <div class="photo-grid__element">
+                            <h2 class="photo-grid__title">Алтай</h2>
+                            <button class="photo-grid__like links-transparency"></button>
+                        </div>
+                    </li>
+                    <li class="photo-grid__item">
+                        <img class="photo-grid__image" src="./images/photo-caucasus.jpg" alt="кавказ">
+                        <div class="photo-grid__element">
+                            <h2 class="photo-grid__title">Кавказ</h2>
+                            <button class="photo-grid__like links-transparency"></button>
+                        </div>
+                    </li>
+                    <li class="photo-grid__item">
+                        <img class="photo-grid__image" src="./images/photo-crimea.jpg" alt="ласточкино гнездо">
+                        <div class="photo-grid__element">
+                            <h2 class="photo-grid__title">Ласточкино гнездо</h2>
+                            <button class="photo-grid__like links-transparency"></button>
+                        </div>
+                    </li>
+                    <li class="photo-grid__item">
+                        <img class="photo-grid__image" src="./images/photo-kaliningrad.jpg" alt="кафедралый собор">
+                        <div class="photo-grid__element">
+                            <h2 class="photo-grid__title">Кафедральный собор</h2>
+                            <button class="photo-grid__like links-transparency"></button>
+                        </div>
+                    </li>
+                    <li class="photo-grid__item">
+                        <img class="photo-grid__image" src="./images/photo-massandra.jpg" alt="массандра">
+                        <div class="photo-grid__element">
+                            <h2 class="photo-grid__title">Массандра</h2>
+                            <button class="photo-grid__like links-transparency"></button>
+                        </div>
+                    </li>
+                    <li class="photo-grid__item">
+                        <img class="photo-grid__image" src="./images/photo-hersones.jpg" alt="херсонес">
+                        <div class="photo-grid__element">
+                            <h2 class="photo-grid__title">Херсонес</h2>
+                            <button class="photo-grid__like links-transparency"></button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer root__center">
+            <h3 class="footer__title">&copy; 2020 Mesto Russia</h3>
+        </footer>
+        <div class="popup">
+            <div class="popup__container">
+                <button class="popup__close-button links-transparency" type="button"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <form class="popup__form">
+                    <input class="popup__input-name" type="text" placeholder="Имя">
+                    <input class="popup__input-achievements" type="text" placeholder="Напишите о себе">
+                    <button class="popup__save-button links-transparency" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.photo-grid__like {
+    background-image: url(../../../images/like.jpg);
+    width: 20.76px;
+    height: 18.13px;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.photo-grid__like:hover {
+    transform: scale(1.1);
+}
+
+.photo-grid__like:focus {
+    outline: none;
+}

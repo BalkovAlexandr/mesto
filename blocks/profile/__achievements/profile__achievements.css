@@ -1,0 +1,17 @@
+.profile__achievements {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.22;
+    margin: 16px 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+    .profile__achievements {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 14px;
+    }
+}

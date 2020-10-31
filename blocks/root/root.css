@@ -1,0 +1,19 @@
+.root {
+    padding: 45px 0 60px;
+    background-color: #000;
+    color: #fff;
+    font-family: "Inter", "Arial", sans-serif;
+}
+
+@media screen and (max-width: 940px) {
+    .root {
+        padding: 35px 20px 48px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .root {
+        padding: 28px 19px 36px;
+    }
+}
