@@ -8,7 +8,7 @@
     white-space: nowrap;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
     .profile__achievements {
         font-size: 14px;
         text-align: center;
