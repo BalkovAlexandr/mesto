@@ -33,7 +33,6 @@
 @import '../blocks/popup/__container/popup__container.css';
 @import '../blocks/popup/__close-button/popup__close-button.css';
 @import '../blocks/popup/__title/popup__title.css';
-@import '../blocks/popup/__input-name/popup__input-name.css';
-@import '../blocks/popup/__input-achievements/popup__input-achievements.css';
+@import '../blocks/popup/__input/popup__input.css';
 @import '../blocks/popup/__save-button/popup__save-button.css';
 @import '../blocks/popup/_opened/popup_opened.css';

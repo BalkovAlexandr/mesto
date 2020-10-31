@@ -4,8 +4,8 @@ let popupCloseButton = document.querySelector('.popup__close-button');
 let profileName = document.querySelector('.profile__name');
 let profileAchievements = document.querySelector('.profile__achievements');
 let popupForm = document.querySelector('.popup__form');
-let popupInputName = document.querySelector('.popup__input-name');
-let popupInputAchievements = document.querySelector('.popup__input-achievements');
+let popupInputName = document.querySelector('.popup__input_text_name');
+let popupInputAchievements = document.querySelector('.popup__input_text_achievements');
 
 function showPopup() {
     popup.classList.add('popup_opened');
@@ -17,9 +17,6 @@ function closePopup() {
     popup.classList.remove('popup_opened');
 }
 
-editButton.addEventListener('click', showPopup);
-popupCloseButton.addEventListener('click', closePopup);
-
 function saveForm(event) {
     event.preventDefault();
     profileName.textContent = popupInputName.value;
@@ -27,4 +24,6 @@ function saveForm(event) {
     closePopup();
 }
 
+editButton.addEventListener('click', showPopup);
+popupCloseButton.addEventListener('click', closePopup);
 popupForm.addEventListener('submit', saveForm);

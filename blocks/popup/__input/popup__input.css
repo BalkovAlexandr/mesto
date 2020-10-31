@@ -1,4 +1,4 @@
-.popup__input-name {
+.popup__input {
     width: 100%;
     border: 0;
     margin-bottom: 30px;
@@ -9,8 +9,13 @@
     padding-bottom: 13px;
 }
 
-.popup__input-name:focus {
+.popup__input:last-of-type {
+    margin-bottom: 48px;
+}
+
+.popup__input:focus {
     outline: none;
     box-shadow: 0px 0px 2px 2px  #06799F;
     border-radius: 4px;
 }
+
