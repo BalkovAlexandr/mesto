@@ -8,8 +8,8 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 0;
-    top: -12%;
-    right: -9%
+    top: -45px;
+    right: -45px;
 }
 
 .popup__close-button:focus {
@@ -20,7 +20,7 @@
     .popup__close-button {
         width: 26px;
         height: 26px;
-        right: -1%;
-        top: -14%;
+        right: -30px;
+        top: -30px;
     }
 }

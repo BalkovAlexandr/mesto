@@ -12,13 +12,13 @@
 <body>
     <div class="root">
         <header class="header root__center">
-            <img class="header__logo" src="images/header-logo.svg" alt="логотип">
+            <img class="header__logo" src="./images/header-logo.svg" alt="логотип">
         </header>
 
         <main class="main">
             <section class="profile root__center">
                 <div class="profile__element">
-                    <img class="profile__avatar" src="images/profile-avatar.jpg" alt="аватар">
+                    <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="аватар">
                     <div class="profile__info">
                         <div class="profile__edit">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -32,15 +32,20 @@
 
             <section class="elements root__center">
                 <ul class="photo-grid">
-                    <li class="photo-grid__item">
+                   <!-- <li class="photo-grid__item">
                         <img class="photo-grid__image" src="./images/photo-altai.jpg" alt="алтай">
+                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
                         <div class="photo-grid__element">
                             <h2 class="photo-grid__title">Алтай</h2>
                             <button class="photo-grid__like links-transparency" type="button"></button>
                         </div>
                     </li>
+
+
+                    
                     <li class="photo-grid__item">
-                        <img class="photo-grid__image" src="./images/photo-caucasus.jpg" alt="кавказ">
+                       <img class="photo-grid__image" src="./images/photo-caucasus.jpg" alt="кавказ">
+                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
                         <div class="photo-grid__element">
                             <h2 class="photo-grid__title">Кавказ</h2>
                             <button class="photo-grid__like links-transparency" type="button"></button>
@@ -48,6 +53,7 @@
                     </li>
                     <li class="photo-grid__item">
                         <img class="photo-grid__image" src="./images/photo-crimea.jpg" alt="ласточкино гнездо">
+                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
                         <div class="photo-grid__element">
                             <h2 class="photo-grid__title">Ласточкино гнездо</h2>
                             <button class="photo-grid__like links-transparency" type="button"></button>
@@ -55,6 +61,7 @@
                     </li>
                     <li class="photo-grid__item">
                         <img class="photo-grid__image" src="./images/photo-kaliningrad.jpg" alt="кафедралый собор">
+                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
                         <div class="photo-grid__element">
                             <h2 class="photo-grid__title">Кафедральный собор</h2>
                             <button class="photo-grid__like links-transparency" type="button"></button>
@@ -62,18 +69,20 @@
                     </li>
                     <li class="photo-grid__item">
                         <img class="photo-grid__image" src="./images/photo-massandra.jpg" alt="массандра">
+                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
                         <div class="photo-grid__element">
                             <h2 class="photo-grid__title">Массандра</h2>
                             <button class="photo-grid__like links-transparency" type="button"></button>
                         </div>
                     </li>
                     <li class="photo-grid__item">
-                        <img class="photo-grid__image" src="./images/photo-hersones.jpg" alt="херсонес">
+                       <img class="photo-grid__image" src="./images/photo-hersones.jpg" alt="херсонес">
+                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
                         <div class="photo-grid__element">
                             <h2 class="photo-grid__title">Херсонес</h2>
                             <button class="photo-grid__like links-transparency" type="button"></button>
                         </div>
-                    </li>
+                    </li>!-->
                 </ul>
             </section>
         </main>
@@ -81,7 +90,8 @@
         <footer class="footer root__center">
             <p class="footer__title">&copy; 2020 Mesto Russia</p>
         </footer>
-        <div class="popup">
+
+        <div class="popup popup_type_edit">
             <div class="popup__container">
                 <button class="popup__close-button links-transparency" type="button"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
@@ -89,9 +99,41 @@
                     <input class="popup__input popup__input_text_name" type="text" placeholder="Имя" name="popup-name">
                     <input class="popup__input popup__input_text_achievements" type="text" placeholder="Напишите о себе" name="popup-achievements">
                     <button class="popup__save-button links-transparency" type="submit">Сохранить</button>
+                    
                 </form>
             </div>
         </div>
+
+        <div class="popup popup_type_add">
+            <div class="popup__container">
+                <button class="popup__close-button links-transparency" type="button"></button>
+                <h2 class="popup__title">Новое место</h2>
+                <form class="popup__form" name="popup-form">
+                    <input class="popup__input popup__input_card_name" type="text" placeholder="Название" name="popup-name">
+                    <input class="popup__input popup__input_card_link" type="text" placeholder="Ссылка на картинку" name="popup-achievements">
+                    <button class="popup__save-button links-transparency" type="submit">Создать</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup popup_type_image">
+            <div class="popup__content">
+                <button class="popup__close-button links-transparency" type="button"></button>
+                <img class="popup__image" src="./images/photo-crimea.jpg" alt="кукуево">
+                <h2 class="popup__image-title"></h2>
+            </div>
+        </div>
+
+        <template class="photo-template">
+            <li class="photo-grid__item">
+            <img class="photo-grid__image" src="" alt="">
+            <button class="photo-grid__delete-button links-transparency" type="button"></button>
+            <div class="photo-grid__element">
+                <h2 class="photo-grid__title"></h2>
+                <button class="photo-grid__like links-transparency" type="button"></button>
+            </div>
+        </li>
+        </template>
     </div>
     <script src="./scripts/index.js"></script>
 </body>
