@@ -67,6 +67,9 @@ function popupClickHandler(event) {
 function showPopup(popup) {
     popup.classList.add('popup_opened');
     document.addEventListener('keydown', escHandler);
+    const form = popup.querySelector(validationConfig.formSelector);
+    const saveButton = form.querySelector(validationConfig.submitButtonSelector);
+    setButtonState(saveButton, form.checkValidity(), validationConfig);
 
 };
 
