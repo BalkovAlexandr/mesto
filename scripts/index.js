@@ -58,7 +58,7 @@ function popupClickHandler(event) {
 function showPopup(popup) {
     popupCardForm.reset();
     popup.classList.add('popup_opened');
-    enableValidation(validationConfig);
+    setButtonState(validationConfig);
     document.addEventListener('keydown', escHandler);
 
 };

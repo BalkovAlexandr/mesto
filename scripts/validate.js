@@ -29,10 +29,10 @@ function checkInputValidity(form, input, config) {
 function setButtonState(button, isActive, config) {
     if (isActive) {
         button.classList.remove(config.buttonInvalidClass);
-        button.removeAttribute('disabled');
+        button.disabled = false;
     } else {
         button.classList.add(config.buttonInvalidClass);
-        button.setAttribute('disabled', true); 
+        button.disabled = true;
     }
 }
 
