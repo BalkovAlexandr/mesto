@@ -32,57 +32,7 @@
 
             <section class="elements root__center">
                 <ul class="photo-grid">
-                   <!-- <li class="photo-grid__item">
-                        <img class="photo-grid__image" src="./images/photo-altai.jpg" alt="алтай">
-                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
-                        <div class="photo-grid__element">
-                            <h2 class="photo-grid__title">Алтай</h2>
-                            <button class="photo-grid__like links-transparency" type="button"></button>
-                        </div>
-                    </li>
-
-
-                    
-                    <li class="photo-grid__item">
-                       <img class="photo-grid__image" src="./images/photo-caucasus.jpg" alt="кавказ">
-                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
-                        <div class="photo-grid__element">
-                            <h2 class="photo-grid__title">Кавказ</h2>
-                            <button class="photo-grid__like links-transparency" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="photo-grid__item">
-                        <img class="photo-grid__image" src="./images/photo-crimea.jpg" alt="ласточкино гнездо">
-                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
-                        <div class="photo-grid__element">
-                            <h2 class="photo-grid__title">Ласточкино гнездо</h2>
-                            <button class="photo-grid__like links-transparency" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="photo-grid__item">
-                        <img class="photo-grid__image" src="./images/photo-kaliningrad.jpg" alt="кафедралый собор">
-                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
-                        <div class="photo-grid__element">
-                            <h2 class="photo-grid__title">Кафедральный собор</h2>
-                            <button class="photo-grid__like links-transparency" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="photo-grid__item">
-                        <img class="photo-grid__image" src="./images/photo-massandra.jpg" alt="массандра">
-                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
-                        <div class="photo-grid__element">
-                            <h2 class="photo-grid__title">Массандра</h2>
-                            <button class="photo-grid__like links-transparency" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="photo-grid__item">
-                       <img class="photo-grid__image" src="./images/photo-hersones.jpg" alt="херсонес">
-                        <button class="photo-grid__delete-button links-transparency" type="button"></button>
-                        <div class="photo-grid__element">
-                            <h2 class="photo-grid__title">Херсонес</h2>
-                            <button class="photo-grid__like links-transparency" type="button"></button>
-                        </div>
-                    </li>!-->
+                   
                 </ul>
             </section>
         </main>
@@ -95,11 +45,12 @@
             <div class="popup__container">
                 <button class="popup__close-button links-transparency" type="button"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__form" name="popup-form">
-                    <input class="popup__input popup__input_text_name" type="text" placeholder="Имя" name="popup-name">
-                    <input class="popup__input popup__input_text_achievements" type="text" placeholder="Напишите о себе" name="popup-achievements">
+                <form class="popup__form" name="popup-form" novalidate>
+                    <input class="popup__input popup__input_text_name" id="name" type="text" placeholder="Имя" name="popup-name" minlength="2" maxlength="40" required>
+                    <span class="error" id="name-error"></span>
+                    <input class="popup__input popup__input_text_achievements" id="achievements" type="text" placeholder="Напишите о себе" name="popup-achievements" minlength="2" maxlength="200" required> 
+                    <span class="error" id="achievements-error"></span>
                     <button class="popup__save-button links-transparency" type="submit">Сохранить</button>
-                    
                 </form>
             </div>
         </div>
@@ -108,9 +59,11 @@
             <div class="popup__container">
                 <button class="popup__close-button links-transparency" type="button"></button>
                 <h2 class="popup__title">Новое место</h2>
-                <form class="popup__form" name="popup-form">
-                    <input class="popup__input popup__input_card_name" type="text" placeholder="Название" name="popup-name">
-                    <input class="popup__input popup__input_card_link" type="text" placeholder="Ссылка на картинку" name="popup-achievements">
+                <form class="popup__form" name="popup-form" novalidate>
+                    <input class="popup__input popup__input_card_name" id="card-name" type="text" placeholder="Название" name="popup-card-name" minlength="2" maxlength="30" required>
+                    <span class="error" id="card-name-error"></span>
+                    <input class="popup__input popup__input_card_link" id="card-link" type="url" placeholder="Ссылка на картинку" name="popup-card-link" required>
+                    <span class="error" id="card-link-error"></span>
                     <button class="popup__save-button links-transparency" type="submit">Создать</button>
                 </form>
             </div>
@@ -130,11 +83,13 @@
             <button class="photo-grid__delete-button links-transparency" type="button"></button>
             <div class="photo-grid__element">
                 <h2 class="photo-grid__title"></h2>
-                <button class="photo-grid__like links-transparency" type="button"></button>
+                <button class="photo-grid__like links-transparency"  id="button-like" type="button"></button>
             </div>
         </li>
         </template>
     </div>
+    <script src="./scripts/cards.js"></script>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
 </html>
