@@ -33,8 +33,17 @@ function addPhotoCard(photo) {
         popupImage.src = cardImage.src;
         popupImage.alt = cardImage.alt;
         showPopup(popupTypeImage);
-
     });
+    
+    cardElement.querySelector('.photo-grid__delete-button').addEventListener('click', event => {
+        const gridItem = event.target.closest('.photo-grid__item');
+        gridItem.remove();
+    });
+    
+    cardElement.querySelector('.photo-grid__like').addEventListener('click', event => {
+        event.target.classList.toggle('photo-grid__like_active');
+    });
+
     return cardElement;
 };      
 
@@ -56,9 +65,7 @@ function popupClickHandler(event) {
 };
 
 function showPopup(popup) {
-    popupCardForm.reset();
     popup.classList.add('popup_opened');
-    enableValidation(validationConfig);
     document.addEventListener('keydown', escHandler);
 
 };
@@ -84,6 +91,7 @@ function popupAddCard(event) {
         };
     photoCardTemplate.prepend(addPhotoCard(newCard));
     closePopup(popupTypeAddCard);
+    popupCardForm.reset();
 };
 
 Array.from(document.querySelectorAll('.popup__close-button')).forEach(popupClose => {
@@ -103,18 +111,7 @@ editButton.addEventListener('click', function() {
 });
 addCardButton.addEventListener('click', () => showPopup(popupTypeAddCard));
 
-photoCardTemplate.addEventListener('click', (event) => {
-    if (event.target.classList.contains('photo-grid__like')) {
-    event.target.classList.toggle('photo-grid__like_active');
-    }
-});
 
-photoCardTemplate.addEventListener('click', (event) => {
-    if (event.target.classList.contains('photo-grid__delete-button')) {
-    const gridItem = event.target.closest('.photo-grid__item');
-    gridItem.remove();
-    }
-});
 
 
 
