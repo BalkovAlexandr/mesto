@@ -37,7 +37,7 @@ const initialCards = [
     }
 ];
 
-const photoCardTemplate = document.querySelector('.photo-grid');
+const cardsContainer = document.querySelector('.photo-grid');
 
 const sectionProfile = document.querySelector('.profile');
 const profileName = sectionProfile.querySelector('.profile__name');
@@ -95,6 +95,12 @@ function popupProfile(evt) {
     closePopup(popupProfileEdit);
 };
 
+function createCard(item) {
+    const card = new Card(item, '#card', showPopupImage);
+    const newCard = card.generateCard();
+    return newCard;
+}
+
 popupForm.addEventListener('submit', popupProfile);
 
 popupCardForm.addEventListener('submit', (evt) => {
@@ -103,7 +109,7 @@ popupCardForm.addEventListener('submit', (evt) => {
         name: popupCardName.value,
         link: popupCardLink.value
     };
-    photoCardTemplate.prepend(new Card(newCard, '#card', showPopupImage).generateCard());
+    cardsContainer.prepend(createCard(newCard));
     closePopup(popupTypeAddCard);
 });
 
@@ -129,9 +135,8 @@ Array.from(document.querySelectorAll('.popup')).forEach(popup => {
 });
 
 initialCards.forEach(item => {
-    const card = new Card(item, '#card', showPopupImage);
-    const newCard = card.generateCard();
-    document.querySelector('.photo-grid').append(newCard);
+    const newCard = createCard(item);
+    cardsContainer.append(newCard);
 });
 
 const validFormPopupProfile = new FormValidator(validationObject, popupProfileEdit);
