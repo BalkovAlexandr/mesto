@@ -1,24 +1,6 @@
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.header::after {
-    content: "";
+    flex: 0 0 auto;
     border-bottom: 1px solid #545454;
-    opacity: 0.7;
-    display: block;
+    padding-top: 45px;
 }
 
-@media screen and (max-width: 940px) { /* игнорируем паддинг страницы, для растягивания полосы на весь экран*/
-    .header::after {
-        margin: 0 -20px 0;
-    }
-}
-
-@media screen and (max-width: 480px) { 
-    .header::after {
-        margin: 0 -19px 0;
-    }
-}

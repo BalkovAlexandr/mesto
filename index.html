@@ -72,12 +72,12 @@
         <div class="popup popup_type_image">
             <div class="popup__content">
                 <button class="popup__close-button links-transparency" type="button"></button>
-                <img class="popup__image" src="./images/photo-crimea.jpg" alt="кукуево">
+                <img class="popup__image" src="./images/photo-crimea.jpg" alt="#">
                 <h2 class="popup__image-title"></h2>
             </div>
         </div>
 
-        <template class="photo-template">
+        <template id="card">
             <li class="photo-grid__item">
             <img class="photo-grid__image" src="#" alt="#">
             <button class="photo-grid__delete-button links-transparency" type="button"></button>
@@ -88,8 +88,6 @@
         </li>
         </template>
     </div>
-    <script src="./scripts/cards.js"></script>
-    <script src="./scripts/validate.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
