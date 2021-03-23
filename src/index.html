@@ -6,19 +6,18 @@
         <meta name="description" content="Поделитесь вашим любимым местом России, добавляйте фотографии, ставьте лайки. ">
         <meta name="keywords" content="место, красивые места россии">
         <meta name="author" content="Александр Балков">
-        <link rel="stylesheet" href="./pages/index.css">
         <title>Mesto</title>
 </head>
 <body>
     <div class="root">
         <header class="header root__center">
-            <img class="header__logo" src="./images/header-logo.svg" alt="логотип">
+            <img class="header__logo" src="<%=require('./images/header-logo.svg')%>" alt="логотип">
         </header>
 
         <main class="main">
             <section class="profile root__center">
                 <div class="profile__element">
-                    <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="аватар">
+                    <img class="profile__avatar" src="<%=require('./images/profile-avatar.jpg')%>" alt="аватар">
                     <div class="profile__info">
                         <div class="profile__edit">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -45,7 +44,7 @@
             <div class="popup__container">
                 <button class="popup__close-button links-transparency" type="button"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__form" name="popup-form" novalidate>
+                <form class="popup__form" name="formEdit" novalidate>
                     <input class="popup__input popup__input_text_name" id="name" type="text" placeholder="Имя" name="popup-name" minlength="2" maxlength="40" required>
                     <span class="error" id="name-error"></span>
                     <input class="popup__input popup__input_text_achievements" id="achievements" type="text" placeholder="Напишите о себе" name="popup-achievements" minlength="2" maxlength="200" required> 
@@ -59,7 +58,7 @@
             <div class="popup__container">
                 <button class="popup__close-button links-transparency" type="button"></button>
                 <h2 class="popup__title">Новое место</h2>
-                <form class="popup__form" name="popup-form" novalidate>
+                <form class="popup__form" name="formAdd" novalidate>
                     <input class="popup__input popup__input_card_name" id="card-name" type="text" placeholder="Название" name="popup-card-name" minlength="2" maxlength="30" required>
                     <span class="error" id="card-name-error"></span>
                     <input class="popup__input popup__input_card_link" id="card-link" type="url" placeholder="Ссылка на картинку" name="popup-card-link" required>
@@ -72,12 +71,12 @@
         <div class="popup popup_type_image">
             <div class="popup__content">
                 <button class="popup__close-button links-transparency" type="button"></button>
-                <img class="popup__image" src="./images/photo-crimea.jpg" alt="#">
+                <img class="popup__image" src="#" alt="#">
                 <h2 class="popup__image-title"></h2>
             </div>
         </div>
 
-        <template id="card">
+        <template id="card" class="template">
             <li class="photo-grid__item">
             <img class="photo-grid__image" src="#" alt="#">
             <button class="photo-grid__delete-button links-transparency" type="button"></button>
@@ -88,6 +87,5 @@
         </li>
         </template>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>

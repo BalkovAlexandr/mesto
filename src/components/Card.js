@@ -1,7 +1,7 @@
-export class Card {
-    constructor(data, cardSelector, handleCardClick) {
-        this._name = data.name;
-        this._link = data.link;
+export default class Card {
+    constructor(title, image, cardSelector, { handleCardClick }) {
+        this._title = title;
+        this._image = image;
         this._cardSelector = cardSelector;
         this._handleCardClick = handleCardClick;
     }
@@ -18,18 +18,18 @@ export class Card {
 
     generateCard() {
         this._element = this._getTemplate();
-        this._setEventListeners();
         const cardImage = this._element.querySelector('.photo-grid__image');
-        cardImage.src = this._link;
-        cardImage.alt = this._name.toLowerCase();
-        this._element.querySelector('.photo-grid__title').textContent = this._name;
+        cardImage.src = this._image;
+        cardImage.alt = this._title.toLowerCase();
+        this._element.querySelector('.photo-grid__title').textContent = this._title;
+        this._setEventListeners();
 
         return this._element;
     }
 
     _setEventListeners() {
         this._element.querySelector('.photo-grid__image').addEventListener('click', () => {
-            this._handleCardClick(this._name, this._link);
+            this._handleCardClick(this._image, this._title);
         });
 
         this._element.querySelector('.photo-grid__delete-button').addEventListener('click', () => {
