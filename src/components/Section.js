@@ -12,7 +12,7 @@ export default class Section {
     renderItems() {
         this.clear();
         this._items.forEach(element => { 
-            this.addItem(element)
+            this._renderer(element);
         });
     }
 

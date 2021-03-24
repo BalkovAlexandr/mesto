@@ -20,7 +20,7 @@ export default class Card {
         this._element = this._getTemplate();
         const cardImage = this._element.querySelector('.photo-grid__image');
         cardImage.src = this._image;
-        cardImage.alt = this._title.toLowerCase();
+        cardImage.alt = this._title;
         this._element.querySelector('.photo-grid__title').textContent = this._title;
         this._setEventListeners();
 
@@ -48,4 +48,9 @@ export default class Card {
     _likeCardHandler() {
         this._element.querySelector('.photo-grid__like').classList.toggle('photo-grid__like_active');
     }
+
+    addCard(thisContainer, card) {
+        thisContainer.prepend(card);
+    }
 }
+
