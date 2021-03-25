@@ -50,7 +50,7 @@ export default class Card {
     }
 
     addCard(thisContainer, card) {
-        thisContainer.prepend(card);
+        thisContainer.container.prepend(card);
     }
 }
 

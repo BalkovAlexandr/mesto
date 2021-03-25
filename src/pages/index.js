@@ -32,17 +32,17 @@ const userInfo = new UserInfo(profileName, profileAchievements);
 
 const popupWithImage = new PopupWithImage(popupTypeImage, popupImage, popupImageTitle);
 
-const popupAddCard = new PopupWithForm(popupTypeAddCard, {
-    handleFormSubmit: (value) => {
-        createCard.addItem(value);
-        popupAddCard.close();
-    }
-});
-
 const popupProfile = new PopupWithForm(popupTypeProfile, {
     handleFormSubmit: (values) => {
         userInfo.setUserInfo(values);
         popupProfile.close();
+    }
+});
+
+const popupAddCard = new PopupWithForm(popupTypeAddCard, {
+    handleFormSubmit: (values) => {
+        createCard.addItem(values);
+        popupAddCard.close();
     }
 });
 
@@ -72,12 +72,11 @@ const createCard = new Section ({
         }
     });
     const cardElement = card.generateCard();
-    createCard._container.prepend(cardElement);
+    card.addCard(createCard, cardElement);
   }
 }, cardsContainer);
 
 createCard.renderItems();
-
 
 
 
