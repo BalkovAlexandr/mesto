@@ -72,7 +72,7 @@ const createCard = new Section ({
         }
     });
     const cardElement = card.generateCard();
-    card.addCard(createCard, cardElement);
+    createCard.addCard(cardElement);
   }
 }, cardsContainer);
 

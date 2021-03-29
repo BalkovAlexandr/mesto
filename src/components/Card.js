@@ -48,9 +48,5 @@ export default class Card {
     _likeCardHandler() {
         this._element.querySelector('.photo-grid__like').classList.toggle('photo-grid__like_active');
     }
-
-    addCard(thisContainer, card) {
-        thisContainer.container.prepend(card);
-    }
 }
 
