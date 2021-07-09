@@ -1,18 +1,20 @@
-export default class UserInfo { 
-  constructor(profileName, profileAchievements) { 
-    this._name = document.querySelector(profileName); 
-    this._achievements = document.querySelector(profileAchievements); 
-  } 
-   
-  getUserInfo() { 
-    const data = {};
-    data.name = this._name.textContent; 
-    data.achievements= this._achievements.textContent; 
-    return data; 
-  } 
-   
-  setUserInfo(values) { 
-    this._name.textContent = values.name; 
-    this._achievements.textContent = values.achievements; 
+export default class UserInfo {
+  constructor({ selectorName, selectorJob, selectorAvatar }) {
+    this._elementName =  document.querySelector(selectorName);
+    this._elementJob = document.querySelector(selectorJob);
+    this._avatar = document.querySelector(selectorAvatar);
   }
-} 
+
+  getUserInfo() {
+    return this._profile = {
+      name: this._elementName.textContent,
+      about: this._elementJob.textContent,
+    };
+  }
+
+  setUserInfo({ name, about, avatar }) {
+    this._elementName.textContent = name;
+    this._elementJob.textContent = about;
+    this._avatar.src = avatar;
+  }
+}

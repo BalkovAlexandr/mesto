@@ -1,39 +1,42 @@
-import Popup from './Popup.js'; 
- 
-export default class PopupWithForm extends Popup { 
-  constructor(popupSelector, { handleFormSubmit }) { 
-    super(popupSelector); 
-    this._handleFormSubmit = handleFormSubmit; 
-    this._popupForm = this._popup.querySelector('.popup__form'); 
-    this._popupInputs = Array.from(this._popupForm.querySelectorAll('.popup__input')); 
-  } 
- 
-  setEventListeners() { 
-    super.setEventListeners(); 
-    this._popupForm.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-      const values = this._getInputValues();
-      this._handleFormSubmit(values);
-    });
-  } 
- 
+import Popup from './Popup.js';
+
+export default class PopupWithForm extends Popup {
+  constructor(popupSelector, handleSubmit) {
+    super(popupSelector);
+    this._handleSubmit = handleSubmit;
+    this._popupForm = this._popupElement.querySelector(".popup__form");
+    this._inputList = this._popupElement.querySelectorAll(".popup__input");
+    this._button = this._popupForm.querySelector('.popup__submit-btn');
+    this._textButton = this._button.textContent;
+  }
+
+  close() {
+    super.close();
+    this._popupForm.reset();
+  }
+
   _getInputValues() {
-    const values = {};
-    this._popupInputs.forEach((input) => values[input.name] = input.value);
-    return values; 
-  } 
- 
-  setInputValues(data) {
-    this._popupInputs.forEach((input) => {
-      if(data[input.name]) {
-        input.value = data[input.name]
-      }
+    this._form = {};
+    this._inputList.forEach((input) => {
+      this._form[input.name] = input.value;
+    });
+
+    return this._form;
+  }
+
+  renderSaving(status){
+    if(status){
+      this._button.textContent = `Cохранение...`;
+    } else {
+      this._button.textContent = this._textButton;
+    }
+  }
+
+  setEventListeners() {
+    super.setEventListeners();
+    this._popupForm.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+      this._handleSubmit(this._getInputValues());
     });
   }
- 
-  close() { 
-    super.close(); 
-    this._popupForm.reset(); 
-  } 
-} 
-
+}
