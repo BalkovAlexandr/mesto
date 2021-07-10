@@ -28,4 +28,6 @@ export const selectorObj = {
   avatarSelector:'.profile__avatar',
 };
 
+export const ESC_KEYCODE = 'Escape';
+
 
